@@ -7,7 +7,6 @@ Simple library using m5atom builtin 5x5 addressable led  matrix
 usage model:
 - import library (once)
 - initialize matrix (once)
-
 - set drawing color
 - draw/clear pixels/mask
 - show changes you made on matrix
@@ -114,7 +113,7 @@ parameters:
 ```
 pixel_breathe(x, y, ms_in=50, ms_out=50)
 ```
-Breathe pixel effect at given coordinates pixel. This is blocking function using **time.sleep_ms()**. Total duration of efect is **11*ms_in + 11*ms_out**
+Breathe pixel effect at given coordinates pixel. This is blocking function using **time.sleep_ms()**. Total duration of efect is **11**×**ms_in + 11**×**ms_out**.
 
 
 parameters:
@@ -166,7 +165,6 @@ example_buf = [
 ## digits.py
 This library contains three pixmaps array of digits from 0 to 9. Digits size: width = 3 pixel, weight = 5 pixel. 
 
-### list of library functions 
 
 ```
 digits_left = [ ...... ]
