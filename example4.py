@@ -1,8 +1,6 @@
 import matrix
-import digits
 import urandom
 import time
-
 
 #assign randint function to r
 r = urandom.randint
@@ -20,6 +18,7 @@ s.clear_all()
 #show changes
 s.show()
 
+#smile pixmaps
 smile0 = [
   0,0,0,0,0,
   0,1,0,1,0,
@@ -48,12 +47,17 @@ while 1:
   #set random active color
   s.pixel_color( r(0,360) )
   #write smile pixmap to led matrix and show changes
+  s.clear_all()
   s.pixel_mask( smile0 )
   s.show()
   time.sleep_ms(1000)
+  s.clear_all()
   s.pixel_mask( smile1 )
   s.show()
   time.sleep_ms(1000)
+  s.clear_all()
   s.pixel_mask( smile2 )
   s.show()
   time.sleep_ms(1000)
+
+
