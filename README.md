@@ -12,10 +12,11 @@ Simple thermometer application using the dallas DS18B20 temperature sensor.  The
 
 To simplify the sensor connection, I used three outputs located next to the ground in the connector.  I used one of the inputs on the connector as a sensor power supply pin
 
-connection diagram below
+connection diagram:
 
 ![schema.jpg](schema.jpg)
 
 
-showing 28 degree
+showing 28 degrees
+
 ![termo.jpg](termo.jpg)
