@@ -1,7 +1,8 @@
 # m5atom matrix library
 
-folder [/lib](/lib) contains the main library file [**matrix.py**](/lib/matrix.py) responsible for handling the embedded rbg led matrix in m5atom matrix.  In addition, there is the helper library [**digits.py**](/lib/digits.py) containing pixmap data for numbers.
+A simple library to support 5x5 rgb led matrix in M5Atom Matrix.  The library allows you to set or delete individual pixels and set a group of pixels in one color using a "mask/pixmap".  It also contains a function for the so-called flash of a single pixel and the breathing effect for a single pixel.
 
+folder [/lib](/lib) contains the main library file [**matrix.py**](/lib/matrix.py) responsible for handling the embedded rbg led matrix.  In addition, there is the helper library [**digits.py**](/lib/digits.py) containing pixmap data for numbers.
 
 
 Simple examples of using this library can be found in the example.py files
