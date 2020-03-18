@@ -1,3 +1,5 @@
+![smile.png](smile.png)
+
 # M5atom matrix library
 
 A simple micropython library to support 5x5 rgb led matrix in M5Atom Matrix.  The library allows you to set or delete individual pixels and set a group of pixels in one color using a "mask/pixmap".  It also contains a function for the so-called flash of a single pixel and the breathing effect for a single pixel.
