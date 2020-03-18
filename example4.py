@@ -8,9 +8,6 @@ r = urandom.randint
 #create matrix class object
 s = matrix.matrix
 
-#create digits class object
-d = digits
-
 #initialize led matrix
 s.init()
 #clear led matrix
