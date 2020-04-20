@@ -30,7 +30,17 @@ showing 28 degrees
 
 ## Scrolling text example
 
-Example script [adafruit.py](adafruit.py) displaying scrolling text with values from adafruit.io feeds. In this case to simplify acces to adafruit.io REST API was used.
+Example script [adafruit.py](adafruit.py) displaying scrolling text with values from adafruit.io feeds. In this case to simplify acces to adafruit.io REST API was used. In this example at time when i wrote this, my feeds are updatet every 25 seconds. I do not guarantee that the feeds will be corect and current at later time.
+
+running example:
+
+```
+#load example to memory (run once)
+import adafruit
+
+#run this function which read actual values from adafruit.io feeds
+adafruit.read()
+```
 
 Watch example video on youtube:
 
