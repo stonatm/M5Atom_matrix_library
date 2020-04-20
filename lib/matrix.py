@@ -1,10 +1,14 @@
+
+#Copyright (c) 2020 stonatm@gmail.com
 #m5atom matrix
-#neopixel 5x5 matrix library V2
+#neopixel 5x5 matrix library V2 with text scrolling
 #HSV color model
+
 from machine import Pin
 import neopixel
 import time
 import math
+import font
 
 class matrix:
 
@@ -72,9 +76,7 @@ class matrix:
     matrix.np.write()
 
   def clear_all():
-    for pix in range (0, matrix.LED_NUM):
-	  #matrix.fill(0,0,0)
-      matrix.np[pix] = (0, 0, 0)
+    matrix.np.fill((0,0,0))
     if matrix.INSTA_DRAW: matrix.show()
 
   def show():
@@ -109,5 +111,42 @@ class matrix:
       if buf[pix]:
         matrix.np[pix] = matrix.hsv(*matrix.color)
     if matrix.INSTA_DRAW: matrix.show()
+  
+  def _add(a,b):
+    w_a = int(len(a)/5)
+    w_b = int(len(b)/5)
+    out = [0] *len(a)
+    for i in range(len(a)):
+      out[i] = a[i]
+    for i in range(5):
+      out[(i*w_a+i*w_b):(i*w_a+i*w_b)] = b[(i*w_b):((i+1)*w_b)]
+    return out
+
+  def _get_frame(buffer, offest):
+    w_buf = int(len(buffer)/5)
+    out = [0] *25
+    for x in range (5):
+      for y in range (5):
+        out[x + y * 5] = buffer[(x+offest)+(y*w_buf)]
+    return out
+
+  def _create_pixmap(input):
+    spacer = [0] *5
+    empty = [0] *25
+    text_buffer = [0] *25
+    for i in range (len(input)):
+      text_buffer = matrix._add(text_buffer, font.get_letter( ord( input[len(input)-1-i] ) ) )
+      text_buffer = matrix._add(text_buffer, spacer) 
+    text_buffer = matrix._add(text_buffer, empty)
+    return text_buffer
+
+  def text_scroll(text_to_scroll, delay=150):
+    t_buf = matrix._create_pixmap(text_to_scroll)
+    #scrolling pixmap on matrix
+    for pos in range ( int(len(t_buf)/5) -5 +1 ):
+      matrix.clear_all()
+      matrix.pixel_mask(matrix._get_frame(t_buf, pos) )
+      matrix.show()
+      time.sleep_ms(delay)
 
 
