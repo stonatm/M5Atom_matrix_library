@@ -173,7 +173,7 @@ parameters:
 **delay** - optionally delay in ms between next frames of scrolling text, default is 150ms
 
 ## fonts.py
-This is a helpel library for function ```text_scroll()``` from **matrix.py** library. It contains pixmaps data for ascii characters codes from 32 to 127.
+This is a helper library for function ```text_scroll()``` from **matrix.py** library. It contains pixmaps data for ascii characters codes from 32 to 127.
 
 ```
 get_letter(asci)
