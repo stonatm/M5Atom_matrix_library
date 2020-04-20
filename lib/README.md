@@ -161,6 +161,28 @@ example_buf = [
   (0,0,255),(0,0,255),(0,0,255),(0,0,255),(0,0,255)
   ]
 
+```
+text_scroll(text_to_scroll, delay=150)
+```
+Display scrolling text on matrix display.
+
+parameters:
+
+**text_to_scroll** - text to scroll and display.
+
+**delay** - optionally delay in ms between next frames of scrolling text, default is 150ms
+
+## fonts.py
+This is a helpel library for function ```text_scroll()``` from **matrix.py** library. It contains pixmaps data for ascii characters codes from 32 to 127.
+
+```
+get_letter(asci)
+```
+Return pixmap data of character for given ascii code. Return pixmaps for ascii codes in range 32 to 127. If ascii code value is beyound of range 32-127 return empty pixmap.
+
+parameters:
+
+**asci** - number of character ascii code
 
 ## digits.py
 This library contains three pixmaps array of digits from 0 to 9. Digits size: width = 3 pixel, weight = 5 pixel. 
